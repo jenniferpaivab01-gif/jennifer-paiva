@@ -1,0 +1,446 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f1f1ee;
+  --ink: #212529;
+  --muted: rgba(0, 0, 0, 0.4);
+  --background: var(--bg);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* Frosted glass fade under sticky nav */
+.nav-frost {
+  background: linear-gradient(
+    to bottom,
+    rgba(241, 241, 238, 0.92) 0%,
+    rgba(241, 241, 238, 0.72) 55%,
+    rgba(241, 241, 238, 0) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+}
+
+/* Hero entrance */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-enter > * {
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-enter > *:nth-child(2) {
+  animation-delay: 0.18s;
+}
+.hero-enter > *:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+/* Case study entrance */
+@keyframes case-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.olivia-case-enter {
+  animation: case-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stickers deck — fluid leap over each other */
+@keyframes sticker-stack-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sticker-leap {
+  0% {
+    transform: translate(var(--from-x), var(--from-y))
+      rotate(var(--sticker-rot, 0deg)) scale(1);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+  }
+  42% {
+    transform: translate(
+        calc(var(--from-x) * 0.35 + var(--to-x) * 0.65),
+        calc(var(--from-y) - 28px)
+      )
+      rotate(var(--sticker-rot, 0deg)) scale(1.04);
+    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.14));
+  }
+  100% {
+    transform: translate(var(--to-x), var(--to-y))
+      rotate(var(--sticker-rot, 0deg)) scale(1);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.sticker-stack {
+  animation: sticker-stack-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+}
+
+.sticker-deck-card {
+  transform: translate(var(--stack-x, 0px), var(--stack-y, 0px))
+    rotate(var(--sticker-rot, 0deg));
+  transition:
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s ease;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.08));
+  will-change: transform;
+}
+
+.sticker-deck-card.is-leaping {
+  animation: sticker-leap 0.98s cubic-bezier(0.33, 0.9, 0.4, 1) forwards;
+  transition: none;
+  z-index: 30 !important;
+}
+
+/* Project cards */
+@keyframes card-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: card-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Diversão page */
+.diversao-enter > * {
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.diversao-enter > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.diversao-enter > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+@keyframes diversao-photo-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diversao-photo {
+  animation: diversao-photo-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.diversao-flag {
+  transition:
+    transform 0.28s cubic-bezier(0.34, 1.4, 0.64, 1),
+    background-color 0.2s ease;
+}
+
+.diversao-flag:hover {
+  transform: translateY(-3px) scale(1.08);
+}
+
+.diversao-flag:active {
+  transform: translateY(0) scale(1);
+}
+
+/* Connect CTA */
+@keyframes connect-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.connect-enter {
+  animation: connect-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+
+.connect-btn:focus-visible {
+  outline: 3px solid #212529;
+  outline-offset: 6px;
+}
+
+/* Hand-drawn scribbles around Connect (transparent ink only) */
+.connect-btn__scribbles {
+  position: absolute;
+  z-index: 3;
+  left: -23%;
+  bottom: -54%;
+  width: 156%;
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s ease;
+}
+
+.connect-btn.is-scribbling .connect-btn__scribbles {
+  opacity: 1;
+}
+
+@keyframes pdf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pdf-loader {
+  width: 36px;
+  height: 36px;
+  border: 2.5px solid rgba(0, 0, 0, 0.12);
+  border-top-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  animation: pdf-spin 0.75s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .connect-btn__scribbles {
+    display: none;
+  }
+}
+
+/* Daniel Sun–style Connect hover: yellow “power on” glow */
+.connect-btn__face {
+  transition:
+    margin 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow:
+    0px 3px 0px 4px #000,
+    0px 6px 8px 8px rgba(255, 227, 46, 0),
+    0px 0px 56px 40px rgba(255, 221, 0, 0),
+    0px 0px 120px 100px rgba(255, 222, 5, 0),
+    0px 0px 200px 120px rgba(255, 222, 5, 0),
+    0px 14px 8px 0px rgba(0, 0, 0, 0.2),
+    0px 19px 8px 0px rgba(0, 0, 0, 0.3),
+    0px 64px 128px 0px rgba(0, 0, 0, 0.25);
+}
+
+.connect-btn__yellow {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.connect-btn__shade {
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease;
+  box-shadow: inset 0px -3px 16px 0px rgba(255, 222, 10, 0);
+}
+
+.connect-btn__sheen {
+  transition: opacity 0.3s ease;
+}
+
+.connect-btn__label {
+  transition: text-shadow 0.35s ease;
+  text-shadow: 0px 4px 32px rgba(255, 231, 71, 0);
+}
+
+.connect-btn__blob {
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  filter: blur(32px);
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.connect-btn__blob--a {
+  width: 22%;
+  height: 40%;
+  top: 68%;
+  left: 62%;
+  background: linear-gradient(
+    270deg,
+    rgba(254, 238, 134, 0.5) 3%,
+    rgba(255, 213, 0, 0.89) 51%,
+    rgb(255, 217, 0) 73%,
+    rgba(255, 239, 133, 0.5) 93%
+  );
+  transform: rotate(5deg);
+}
+
+.connect-btn__blob--b {
+  width: 8%;
+  height: 14%;
+  top: 2%;
+  left: 38%;
+  background: linear-gradient(
+    270deg,
+    rgba(254, 238, 134, 0.2) 3%,
+    rgb(255, 217, 0) 47%,
+    rgba(255, 239, 133, 0.2) 93%
+  );
+  transform: rotate(4deg);
+}
+
+.connect-btn:hover .connect-btn__face,
+.connect-btn:focus-visible .connect-btn__face {
+  box-shadow:
+    0px 3px 0px 4px #ffef87,
+    0px 6px 8px 8px rgb(255, 227, 46),
+    0px 0px 56px 48px rgba(255, 221, 0, 0.5),
+    0px 0px 120px 120px rgba(255, 221, 4, 0.4),
+    0px 0px 200px 160px rgba(255, 221, 4, 0.1),
+    0px 14px 8px 0px rgba(0, 0, 0, 0),
+    0px 19px 8px 0px rgba(0, 0, 0, 0),
+    0px 64px 128px 0px rgba(0, 0, 0, 0);
+}
+
+.connect-btn:hover .connect-btn__yellow,
+.connect-btn:focus-visible .connect-btn__yellow {
+  opacity: 1;
+}
+
+.connect-btn:hover .connect-btn__shade,
+.connect-btn:focus-visible .connect-btn__shade {
+  background-color: #403500;
+  box-shadow: inset 0px -3px 12px 0px rgba(255, 222, 9, 0.8);
+}
+
+.connect-btn:hover .connect-btn__sheen,
+.connect-btn:focus-visible .connect-btn__sheen {
+  opacity: 0.35;
+}
+
+.connect-btn:hover .connect-btn__label,
+.connect-btn:focus-visible .connect-btn__label {
+  text-shadow: 0px 4px 32px rgba(255, 231, 71, 0.3);
+}
+
+.connect-btn:hover .connect-btn__blob--a,
+.connect-btn:focus-visible .connect-btn__blob--a {
+  opacity: 0.6;
+  width: 70%;
+  height: 58%;
+  top: 52%;
+  left: 4%;
+}
+
+.connect-btn:hover .connect-btn__blob--b,
+.connect-btn:focus-visible .connect-btn__blob--b {
+  opacity: 0.75;
+  width: 35%;
+  height: 34%;
+  top: -8%;
+  left: 58%;
+}
+
+.connect-btn:active .connect-btn__face {
+  margin: 20px 22px 22px 22px;
+}
+
+/* Sobre page */
+.sobre-enter > * {
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sobre-enter > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.sobre-enter > *:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.sobre-enter > *:nth-child(3) {
+  animation-delay: 0.22s;
+}
+.sobre-enter > *:nth-child(4) {
+  animation-delay: 0.32s;
+}
+.sobre-enter > *:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter > *,
+  .sticker-stack,
+  .sticker-deck-card,
+  .project-card,
+  .diversao-enter > *,
+  .diversao-photo,
+  .sobre-enter > *,
+  .connect-enter {
+    animation: none !important;
+  }
+
+  .pdf-loader {
+    animation: none !important;
+    border-top-color: rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
+  }
+
+  .sticker-deck-card {
+    transition: none !important;
+  }
+
+  .diversao-flag {
+    transition: none !important;
+  }
+
+  .diversao-flag:hover,
+  .diversao-flag:active {
+    transform: none !important;
+  }
+
+  .sticker-deck-card.is-leaping {
+    transform: translate(var(--to-x, 0px), var(--to-y, 0px))
+      rotate(var(--sticker-rot, 0deg));
+  }
+}
