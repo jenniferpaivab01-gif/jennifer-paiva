@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Projetos
+
+- OliviAI - AI
+- Chat Support — SaaS B2B de atendimento
+- Teste A/B e análise de extrato
+- S1NC sob a Lente do WCAG
+- Análise de UX com mapa de calor
+
 ## Getting Started
 
 First, run the development server:
