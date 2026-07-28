@@ -171,11 +171,6 @@ export function SobreContent() {
                     <p className="mt-1 text-lg font-extrabold text-black/40">
                       {item.role}
                     </p>
-                    {item.detail ? (
-                      <p className="mt-1 text-lg font-semibold text-black/40">
-                        {item.detail}
-                      </p>
-                    ) : null}
                     {item.body ? (
                       <p className="mt-3 max-w-2xl text-lg font-semibold leading-[1.7] text-black/40">
                         {item.body}

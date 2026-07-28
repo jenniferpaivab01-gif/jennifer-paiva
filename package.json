@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "css:build": "node ./scripts/build-css.mjs",
+    "css:watch": "tailwindcss -i ./src/styles/globals.css -o ./src/app/globals.css --watch",
+    "dev:next": "next dev --webpack",
+    "dev": "concurrently -k -n css,next -c magenta,cyan \"npm run css:watch\" \"npm run dev:next\"",
+    "build": "npm run css:build && next build --webpack",
     "start": "next start",
     "lint": "eslint"
   },
@@ -14,10 +17,11 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/cli": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
