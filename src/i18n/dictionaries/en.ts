@@ -20,6 +20,8 @@ export const en: Dictionary = {
   pdfViewer: {
     close: "Close",
     closeAria: "Close viewer",
+    loading: "Downloading case…",
+    loadingAria: "Download PDF",
   },
   caseOlivia: {
     close: "Close",
@@ -108,10 +110,15 @@ export const en: Dictionary = {
     stickerResearch: "Research",
     stickerPrototype: "Prototyping",
     stickerUsability: "Usability",
+    introTitle: "Nice to meet you",
+    introBody:
+      "I'm a product designer and researcher passionate about experiences that make life easier. I believe even the biggest challenges can be translated into simple, human solutions.",
+    introPortraitAlt: "Jennifer",
+    introLinkedinAria: "LinkedIn",
     currently: "Currently",
     currentlyRole: "App S1nc - W1 Consultoria",
-    previously: "Previously at",
-    previouslyRole: "",
+    previously: "Previously",
+    previouslyRole: "BiaToday",
   },
   connect: {
     sectionAria: "Connect",
@@ -122,7 +129,6 @@ export const en: Dictionary = {
   footer: {
     gmail: "Gmail",
     instagram: "Instagram",
-    behance: "Behance",
     linkedin: "LinkedIn",
   },
   badges: {
@@ -134,30 +140,30 @@ export const en: Dictionary = {
       title: "OliviAI - AI",
       description:
         "AI chat inside S1nc that reads the user's statement and answers financial questions in natural language. Before, understanding spending meant navigating three screens. The new experience replaces that with a single conversation, with quick suggestions and proactive spending alerts — increasing financial clarity and reducing effort.",
-      meta: "S1nc · 2025",
+      meta: "OlivIA · 2026",
     },
     appWeb: {
       title: "Chat Support — B2B SaaS for customer support",
       description:
         "All support in one place: a unified inbox with AI prioritization, customer history always at hand, and a metrics dashboard. Agents respond faster and more consistently; managers decide with data, not gut feel.",
-      meta: "S1nc · 2025",
+      meta: "Chat Support · 2026",
     },
     pesquisa: {
-      title: "Statement research & analysis",
+      title: "A/B test & statement analysis",
       description:
-        "Redesigning Facebook's account settings to match the new, modernized interface and building a framework for future account setting additions. This change impacts 9 million+ users daily.",
-      meta: "S1nc · 2025",
+        "Big chart or big number? Technical name or everyday language? Instead of guessing, I tested — and the result revealed important decisions.",
+      meta: "S1nc · 2026",
     },
     wcag: {
-      title: "Case for WCAG",
+      title: "S1NC through a WCAG Lens",
       description:
-        "Creating the first credit card experience inside the app, from signup flow to statements and invoices. I designed solutions to reduce confusion, clarify the journey, and enable visual card personalization — building more trust and engagement.",
+        "Low contrast, small touch targets, color as the only status cue — invisible problems for people who see well, but real barriers for part of your users. I audited S1NC against WCAG, screen by screen, and turned each barrier into a concrete usability improvement.",
       meta: "S1nc · 2025",
     },
     mapa: {
-      title: "Heat map",
+      title: "UX analysis with heat maps",
       description:
-        "Creating the first credit card experience inside the app, from signup flow to statements and invoices. I designed solutions to reduce confusion, clarify the journey, and enable visual card personalization — building more trust and engagement.",
+        "Where exactly does the user abandon the purchase? I followed the click — analyzing the sales flow in Clarity's heat map to find the exact failure point. Using heat maps and Clarity session recordings, I mapped the sales flow click by click, identifying friction with real behavioral evidence (rage clicks, dead clicks, excessive scroll) instead of assumptions.",
       meta: "S1nc · 2025",
     },
   },
@@ -166,11 +172,11 @@ export const en: Dictionary = {
     hello: "Hello",
     imJennifer: "I'm Jennifer",
     phonetic: "/ jenni · jeje/",
-    bio: "Product Designer with sharp user empathy, specialized in turning complexity and ambiguity into clear, intuitive solutions. Focused on craft, storytelling, and high exploratory capacity, I dive into details to solve problems deeply and bring order to chaos.",
+    bio: "Product Designer with sharp user empathy, specialized in turning complex problems into clear, accessible, and efficient digital solutions. I work end-to-end — from research and usability testing to interface design and design system evolution — always aligning user needs with business goals and technical feasibility.",
     dailyWorkTitle: "Day-to-day work",
-    dailyWorkRole: "Mid-level Product Designer",
+    dailyWorkRole: "UX/UI Designer",
     dailyWorkBody:
-      "with strong user empathy, specialized in translating complexity and ambiguity into clear, intuitive solutions. Through interviews, storytelling, and deep exploration, I aim to solve problems in the details and organize the chaos.",
+      "focused on mobile and web digital products, working end-to-end: from user research to delivery and validation. I run interviews, map journeys and information architecture, prototype in Figma, and evolve design systems — always aiming for clarity, usability, and accessibility across different user profiles.",
     outsideTitle: "Outside the office",
     outsideBody:
       "In my free time, I'm passionate about traveling, cooking, and exploring new cultures, plus I love the strategy of board games with friends. My 'puzzle-solver' side is innate and tireless — maybe a bit too much! If curiosity struck, I'm happy to connect!",
@@ -180,8 +186,12 @@ export const en: Dictionary = {
     powersTitle: "My superpowers",
     notebookAlt: "Notebook with superpowers list and double diamond diagram",
     powers: {
+      designAi: {
+        title: "Design 🤝 AI",
+        body: "I use AI today to speed up many processes in my day-to-day work, including documentation, research, faster prototyping, and usability testing with a focus on accessibility.",
+      },
       synthesize: {
-        title: "Synthesizing insights",
+        title: "Insight synthesis",
         body: "My specialty is decoding the sea of user information and turning it into strategic directions, ensuring design stays focused on effective, impactful solutions.",
       },
       speed: {
@@ -203,7 +213,7 @@ export const en: Dictionary = {
       },
       vulp: {
         period: "2023—2025",
-        company: "Vulp Tech",
+        company: "BiaToday",
         role: "UX UI Designer",
         body: "I worked on the design of a benefits club with strong omnichannel integration, with WhatsApp as the main experience channel. I led strategic UX, end-to-end journeys, information architecture, and Figma prototyping, continuously validating with users and aligning experience, business rules, and product metrics.",
       },

@@ -9,32 +9,26 @@ export function Footer() {
   const socials = [
     {
       href: "mailto:jenniferpaivab01@gmail.com",
-      src: "/assets/footer/gmail.svg",
+      src: "/assets/footer/gmail.png",
       alt: t.footer.gmail,
       rotate: 0,
     },
     {
-      href: "https://instagram.com",
-      src: "/assets/footer/instagram.svg",
+      href: "https://www.instagram.com/jenni__paiva/",
+      src: "/assets/footer/instagram.png",
       alt: t.footer.instagram,
       rotate: -6,
     },
     {
-      href: "https://behance.net",
-      src: "/assets/footer/behance.svg",
-      alt: t.footer.behance,
-      rotate: 0,
-    },
-    {
-      href: "https://linkedin.com",
-      src: "/assets/footer/linkedin.svg",
+      href: "https://www.linkedin.com/in/jennifer-paiva-98aa66278/",
+      src: "/assets/footer/linkedin.png",
       alt: t.footer.linkedin,
       rotate: 3.5,
     },
   ] as const;
 
   return (
-    <footer className="mx-6 mb-8 mt-24 md:mx-8 md:mb-12 md:mt-32">
+    <footer className="mx-6 mt-24 pb-8 md:mx-8 md:mt-32 md:pb-12">
       <div className="flex flex-col items-start justify-between gap-6 rounded-[32px] bg-[#252525] px-6 py-6 sm:flex-row sm:items-center sm:px-8 sm:py-5">
         <a
           href="mailto:jenniferpaivab01@gmail.com"
@@ -72,7 +66,7 @@ export function Footer() {
                 width={56}
                 height={56}
                 unoptimized
-                className="size-12 sm:size-14"
+                className="size-12 rounded-[12px] sm:size-14 sm:rounded-[14px]"
                 style={{ transform: `rotate(${social.rotate}deg)` }}
               />
             </a>

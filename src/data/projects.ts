@@ -22,7 +22,7 @@ export const projectCopyKey: Record<
 export type Project = {
   id: ProjectId;
   badge?: ProjectBadge;
-  /** When set, clicking the card opens this PDF in a viewer */
+  /** When set, clicking the card downloads this PDF */
   pdfSrc?: string;
   media: {
     type: "image" | "composite";
@@ -39,6 +39,7 @@ export const projects: Project[] = [
   {
     id: "olivia",
     badge: "shipped",
+    pdfSrc: "/documents/case-olivia.pdf",
     media: {
       type: "composite",
       bg: "#c7b8ff",
@@ -50,16 +51,17 @@ export const projects: Project[] = [
   {
     id: "app-web",
     badge: "shipped",
+    pdfSrc: "/documents/case-chat-support.pdf",
     media: {
-      type: "composite",
+      type: "image",
+      src: "/assets/chat-support-card.png",
       bg: "#f28094",
-      watermark: "CHAT SUPPORT",
-      watermarkColor: "rgba(255,255,255,0.7)",
-      phoneSrc: "/assets/app-web-bg.png",
+      objectFit: "contain",
     },
   },
   {
     id: "pesquisa",
+    pdfSrc: "/documents/case-pesquisa.pdf",
     media: {
       type: "composite",
       bg: "#ffffff",

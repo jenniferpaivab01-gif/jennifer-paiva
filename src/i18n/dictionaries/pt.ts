@@ -2,13 +2,13 @@ export const pt = {
   meta: {
     title: "Jenni — UX UI Design",
     description:
-      "Apaixonada por experiencias que tornam a vida mais facil. Portfolio de UX UI Design.",
+      "Apaixonada por experiências que tornam a vida mais fácil. Portfólio de UX UI Design.",
   },
   nav: {
     work: "Trabalho",
     fun: "Diversão",
     about: "Sobre",
-    resume: "Resumo",
+    resume: "Currículo",
     homeAria: "Jenni — início",
     languageAria: "Idioma",
   },
@@ -18,6 +18,8 @@ export const pt = {
   pdfViewer: {
     close: "Fechar",
     closeAria: "Fechar visualização",
+    loading: "Baixando case…",
+    loadingAria: "Baixar PDF",
   },
   caseOlivia: {
     close: "Fechar",
@@ -100,27 +102,31 @@ export const pt = {
   },
   hero: {
     greeting: "🤘 Olá eu sou a JENNI, UX UI DESIGN e",
-    headline: "Apaixonada por\nexperiencias que tornam\na vida mais facil : )",
-    stickerAgile: "Metodologia agil",
+    headline: "Apaixonada por\nexperiências que tornam\na vida mais fácil : )",
+    stickerAgile: "Metodologia ágil",
     stickerInterview: "Entrevista",
     stickerResearch: "Pesquisa",
     stickerPrototype: "Prototipação",
     stickerUsability: "Usabilidade",
+    introTitle: "Prazer em conhecê-lo",
+    introBody:
+      "Sou designer de produto, pesquisadora apaixonada por experiências que tornam a vida mais fácil. Acredito que até os maiores desafios podem ser traduzidos em soluções simples e humanas.",
+    introPortraitAlt: "Jennifer",
+    introLinkedinAria: "LinkedIn",
     currently: "Atualmente",
     currentlyRole: "App S1nc - W1 Consultoria",
-    previously: "Anteriormente em",
-    previouslyRole: "",
+    previously: "Anteriormente",
+    previouslyRole: "BiaToday",
   },
   connect: {
-    sectionAria: "Connect",
-    hint: "Tap this 'tiny' button to\nhighlight your product =)",
-    label: "Connect",
-    aria: "Connect — enviar email",
+    sectionAria: "Conectar",
+    hint: "Toque neste botão 'minúsculo' para\ndestacar seu produto =)",
+    label: "Conectar",
+    aria: "Conectar — enviar email",
   },
   footer: {
     gmail: "Gmail",
     instagram: "Instagram",
-    behance: "Behance",
     linkedin: "LinkedIn",
   },
   badges: {
@@ -132,30 +138,30 @@ export const pt = {
       title: "OliviAI - AI",
       description:
         "Chat de IA dentro do S1nc que lê o extrato do usuário e responde dúvidas financeiras em linguagem natural. Antes, entender gastos exigia navegar por três telas. A nova experiência substitui isso por uma conversa única, com sugestões rápidas e alertas proativos de gasto, aumentando a clareza financeira e reduzindo o esforço do usuário.",
-      meta: "S1nc · 2025",
+      meta: "OlivIA · 2026",
     },
     appWeb: {
       title: "Chat Support — SaaS B2B de atendimento",
       description:
         "Todo o suporte em um lugar só: inbox único com IA de priorização, histórico do cliente sempre à mão e dashboard de métricas. Agente atende mais rápido e de forma padronizada; gestor decide com dado, não com percepção.",
-      meta: "S1nc · 2025",
+      meta: "Chat Support · 2026",
     },
     pesquisa: {
-      title: "Pequisa e analise extrato",
+      title: "Teste A/B e análise de extrato",
       description:
-        "Redesigning Facebook's account settings to match the new, modernized interface and building a framework for future account setting additions. This change impacts 9 million+ users daily.",
-      meta: "S1nc · 2025",
+        "Gráfico ou número grande? Nome técnico ou nome do dia a dia? Em vez de escolher no achismo, testei — e o resultado revelou decisões importantes.",
+      meta: "S1nc · 2026",
     },
     wcag: {
-      title: "Case for WCAG",
+      title: "S1NC sob a Lente do WCAG",
       description:
-        "Criação da primeira experiência de cartão de crédito dentro do app, desde o fluxo de cadastro até faturas e extrato. Desenvolvi soluções para reduzir dúvidas, tornar a jornada clara e ainda permitir a personalização visual do cartão, gerando mais confiança e engajamento dos usuários.",
+        "Contraste baixo, alvo de toque pequeno, cor como único indicador de status — problemas invisíveis pra quem enxerga bem, mas que travam parte real dos seus usuários. Auditei o S1NC contra o WCAG, tela por tela, e transformei cada barreira em melhoria concreta de usabilidade.",
       meta: "S1nc · 2025",
     },
     mapa: {
-      title: "Mapa de calor",
+      title: "Análise de UX com mapa de calor",
       description:
-        "Criação da primeira experiência de cartão de crédito dentro do app, desde o fluxo de cadastro até faturas e extrato. Desenvolvi soluções para reduzir dúvidas, tornar a jornada clara e ainda permitir a personalização visual do cartão, gerando mais confiança e engajamento dos usuários.",
+        "Onde exatamente o usuário desiste de comprar? Fui atrás do clique — analisei o fluxo de venda no mapa de calor do Clarity pra encontrar o ponto exato da falha. Usando mapa de calor e gravações de sessão do Clarity, mapeei o fluxo de venda clique a clique, identificando fricções com evidência real de comportamento (rage click, dead click, scroll excessivo) em vez de suposição.",
       meta: "S1nc · 2025",
     },
   },
@@ -164,14 +170,14 @@ export const pt = {
     hello: "Olá",
     imJennifer: "Eu sou Jennifer",
     phonetic: "/ jenni · jeje/",
-    bio: "Product Designer com empatia aguçada para o usuário, especializada em transformar complexidade e ambiguidade em soluções claras e intuitivas. Com foco em artesanato, storytelling e uma alta capacidade exploratória, mergulho nos detalhes para resolver problemas com profundidade e trazer ordem ao caos.",
+    bio: "Product Designer com empatia aguçada pelo usuário, especializada em transformar problemas complexos em soluções digitais claras, acessíveis e eficientes. Atuo de ponta a ponta — da pesquisa e testes de usabilidade ao desenho de interfaces e evolução de design systems — sempre alinhando as necessidades do usuário aos objetivos de negócio e à viabilidade técnica.",
     dailyWorkTitle: "Trabalho diário",
-    dailyWorkRole: "Product Designer Pleno",
+    dailyWorkRole: "UX/UI Designer",
     dailyWorkBody:
-      "com forte empatia pelo usuário, especializada em traduzir complexidade e ambiguidade em soluções claras e intuitivas. Através de entrevista, storytelling e exploração aprofundada, busco resolver problemas nos detalhes e organizar o caos.",
+      "focada em produtos digitais mobile e web, atuando end-to-end: da pesquisa com usuários à entrega e validação das soluções. Conduzo entrevistas, mapeio jornadas e arquitetura da informação, prototipo no Figma e evoluo design systems, sempre em busca de clareza, usabilidade e acessibilidade para diferentes perfis de usuário.",
     outsideTitle: "Fora do escritório",
     outsideBody:
-      "Nas horas vagas, sou uma apaixonada(o) por viajar, cozinhar e explorar novas culturas, além de adorar a estratégia dos jogos de tabuleiro com amigos. Meu lado 'quebra-cabeças' é inato e incansável – talvez até um pouco demais! Se a curiosidade bateu, estou à disposição para um contato!",
+      "Nas horas vagas, sou apaixonada por viajar, cozinhar e explorar novas culturas, além de adorar a estratégia dos jogos de tabuleiro com amigos. Meu lado 'quebra-cabeças' é inato e incansável – talvez até um pouco demais! Se a curiosidade bateu, estou à disposição para um contato!",
     socialX: "X / Twitter",
     socialLinkedin: "LinkedIn",
     socialEmail: "Email",
@@ -179,8 +185,12 @@ export const pt = {
     notebookAlt:
       "Caderno com lista de super poderes e diagrama double diamond",
     powers: {
+      designAi: {
+        title: "Design 🤝 AI",
+        body: "Utilizo hoje a AI para acelerar diversos processos no meu dia a dia, incluindo documentações, pesquisas, aceleração de prototipação e testes de usabilidade visando a acessibilidade.",
+      },
       synthesize: {
-        title: "Sintetizar de Insights",
+        title: "Síntese de Insights",
         body: "Minha especialidade é decifrar o mar de informações dos usuários e transformá-lo em direções estratégicas, garantindo que o design seja focado em soluções eficazes e impactantes.",
       },
       speed: {
@@ -202,7 +212,7 @@ export const pt = {
       },
       vulp: {
         period: "2023—2025",
-        company: "Vulp Tech",
+        company: "BiaToday",
         role: "Designer UX UI",
         body: "Atuei no design de um clube de benefícios com forte integração omnichannel, com o WhatsApp como canal principal de experiência. Conduzi UX estratégico, jornadas end-to-end, arquitetura da informação e prototipação no Figma, validando continuamente com usuários e alinhando experiência, regras de negócio e métricas de produto.",
       },
@@ -218,7 +228,7 @@ export const pt = {
       bachelor: {
         period: "2024 - 2026",
         title: "Bacharelado Design de Produto",
-        place: "Universidade cruzeiro do sul",
+        place: "Universidade Cruzeiro do Sul",
         detail: "Design de experiência do usuário",
       },
       mentorship: {
@@ -245,7 +255,7 @@ export const pt = {
     copy: {
       ch: {
         intro:
-          "Curiosity and creativity have always been central to my life. When I'm not tinkering at work, I love exploring, learning, trying new things and diving into new hobbies. Here are just a few of the things I've made.",
+          "Curiosidade e criatividade sempre foram centrais na minha vida. Quando não estou mexendo no trabalho, adoro explorar, aprender, experimentar coisas novas e mergulhar em novos hobbies. Aqui vão algumas das coisas que fiz.",
         detail:
           "Minha curiosidade me leva a experimentar coisas novas, e uma das paixões que descobri nesse caminho é a arte, seja pintando em aquarela ou explorando o artesanato.",
       },
@@ -257,13 +267,13 @@ export const pt = {
       },
       br: {
         intro:
-          "Curiosity and creativity have always been central to my life. When I'm not tinkering at work, I love exploring, learning, trying new things and diving into new hobbies. Here are just a few of the things I've made.",
+          "Curiosidade e criatividade sempre foram centrais na minha vida. Quando não estou mexendo no trabalho, adoro explorar, aprender, experimentar coisas novas e mergulhar em novos hobbies. Aqui vão algumas das coisas que fiz.",
         detail:
           "Minha curiosidade me leva a experimentar coisas novas, e uma das paixões que descobri nesse caminho é a arte, seja pintando em aquarela ou explorando o artesanato.",
       },
       pt: {
         intro:
-          "Curiosity and creativity have always been central to my life. When I'm not tinkering at work, I love exploring, learning, trying new things and diving into new hobbies. Here are just a few of the things I've made.",
+          "Curiosidade e criatividade sempre foram centrais na minha vida. Quando não estou mexendo no trabalho, adoro explorar, aprender, experimentar coisas novas e mergulhar em novos hobbies. Aqui vão algumas das coisas que fiz.",
         detail:
           "Minha curiosidade me leva a experimentar coisas novas, e uma das paixões que descobri nesse caminho é a arte, seja pintando em aquarela ou explorando o artesanato.",
       },

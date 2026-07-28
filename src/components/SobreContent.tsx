@@ -8,6 +8,7 @@ export function SobreContent() {
   const { sobre } = t;
 
   const powers = [
+    sobre.powers.designAi,
     sobre.powers.synthesize,
     sobre.powers.speed,
     sobre.powers.designDev,
@@ -26,19 +27,9 @@ export function SobreContent() {
 
   const socialLinks = [
     {
-      href: "https://x.com",
-      src: "/assets/sobre/icon-x.svg",
-      label: sobre.socialX,
-    },
-    {
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/jennifer-paiva-98aa66278/",
       src: "/assets/sobre/icon-linkedin.svg",
       label: sobre.socialLinkedin,
-    },
-    {
-      href: "mailto:jenniferpaivab01@gmail.com",
-      src: "/assets/sobre/icon-mail.svg",
-      label: sobre.socialEmail,
     },
   ] as const;
 

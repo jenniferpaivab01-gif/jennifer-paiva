@@ -229,6 +229,21 @@ body {
   opacity: 1;
 }
 
+@keyframes pdf-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pdf-loader {
+  width: 36px;
+  height: 36px;
+  border: 2.5px solid rgba(0, 0, 0, 0.12);
+  border-top-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  animation: pdf-spin 0.75s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .connect-btn__scribbles {
     display: none;
@@ -403,6 +418,12 @@ body {
   .sobre-enter > *,
   .connect-enter {
     animation: none !important;
+  }
+
+  .pdf-loader {
+    animation: none !important;
+    border-top-color: rgba(0, 0, 0, 0.4);
+    opacity: 0.7;
   }
 
   .sticker-deck-card {
