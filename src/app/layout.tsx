@@ -19,7 +19,7 @@ const inter = Inter({
 const museo = MuseoModerno({
   variable: "--font-museo",
   subsets: ["latin"],
-  weight: ["500"],
+  weight: ["400", "500"],
 });
 
 const defaultCopy = dictionaries[defaultLocale].meta;

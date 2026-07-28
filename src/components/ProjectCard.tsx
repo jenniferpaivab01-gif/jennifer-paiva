@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState, type MouseEvent } from "react";
 import type { Project } from "@/data/projects";
 import { projectCopyKey } from "@/data/projects";
 import { useTranslations } from "@/i18n/LocaleProvider";
@@ -100,6 +101,27 @@ function ProjectMedia({ project }: { project: Project }) {
   );
 }
 
+function PdfLoadingOverlay({ label }: { label: string }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-5 bg-[var(--bg)]/92 backdrop-blur-sm"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+      aria-label={label}
+    >
+      <span className="pdf-loader" aria-hidden="true" />
+      <p className="text-base font-medium text-black/50">{label}</p>
+    </div>
+  );
+}
+
+function downloadFileName(src: string, title: string) {
+  const fromPath = src.split("/").pop();
+  if (fromPath?.endsWith(".pdf")) return fromPath;
+  return `${title.replace(/[^\w\s-]/g, "").trim() || "case"}.pdf`;
+}
+
 export function ProjectCard({
   project,
   index,
@@ -110,33 +132,82 @@ export function ProjectCard({
   const t = useTranslations();
   const copy = t.projects[projectCopyKey[project.id]];
   const badgeLabel = project.badge ? t.badges[project.badge] : null;
-  const href = project.pdfSrc ? `/case/${project.id}` : `#${project.id}`;
+  const [downloading, setDownloading] = useState(false);
+
+  async function handlePdfDownload(event: MouseEvent<HTMLAnchorElement>) {
+    if (!project.pdfSrc) return;
+
+    event.preventDefault();
+    if (downloading) return;
+
+    setDownloading(true);
+    try {
+      const response = await fetch(project.pdfSrc);
+      if (!response.ok) throw new Error("Failed to download PDF");
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = downloadFileName(project.pdfSrc, copy.title);
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+    } catch {
+      // Fallback: open the file URL if programmatic download fails
+      window.open(project.pdfSrc, "_blank", "noopener,noreferrer");
+    } finally {
+      setDownloading(false);
+    }
+  }
+
+  const cardContent = (
+    <>
+      <div className="overflow-hidden rounded-xl transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.35)]">
+        <ProjectMedia project={project} />
+      </div>
+
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <h2 className="text-2xl font-bold leading-[1.2] text-black">
+          {copy.title}
+        </h2>
+        {badgeLabel ? <Badge label={badgeLabel} /> : null}
+      </div>
+
+      <p className="mt-3 text-base font-medium leading-[1.7] text-black/40">
+        {copy.description}
+      </p>
+
+      <p className="mt-4 text-base font-semibold leading-[1.2] text-black">
+        {copy.meta}
+      </p>
+    </>
+  );
 
   return (
     <article
       className="project-card group flex flex-col"
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <Link href={href} className="block outline-none">
-        <div className="overflow-hidden rounded-xl transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.35)]">
-          <ProjectMedia project={project} />
-        </div>
+      {downloading ? (
+        <PdfLoadingOverlay label={t.pdfViewer.loading} />
+      ) : null}
 
-        <div className="mt-4 flex flex-wrap items-center gap-3">
-          <h2 className="text-2xl font-bold leading-[1.2] text-black">
-            {copy.title}
-          </h2>
-          {badgeLabel ? <Badge label={badgeLabel} /> : null}
-        </div>
-
-        <p className="mt-3 text-base font-medium leading-[1.7] text-black/40">
-          {copy.description}
-        </p>
-
-        <p className="mt-4 text-base font-semibold leading-[1.2] text-black">
-          {copy.meta}
-        </p>
-      </Link>
+      {project.pdfSrc ? (
+        <a
+          href={project.pdfSrc}
+          download
+          onClick={handlePdfDownload}
+          className="block outline-none"
+          aria-label={`${copy.title} — ${t.pdfViewer.loadingAria}`}
+        >
+          {cardContent}
+        </a>
+      ) : (
+        <Link href={`#${project.id}`} className="block outline-none">
+          {cardContent}
+        </Link>
+      )}
     </article>
   );
 }

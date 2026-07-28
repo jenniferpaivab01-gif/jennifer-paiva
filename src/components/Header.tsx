@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "@/i18n/LocaleProvider";
 
 function isActive(pathname: string, href: string) {
   if (href === "/") {
-    return pathname === "/" || pathname.startsWith("/case/");
+    return pathname === "/";
   }
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -20,7 +20,6 @@ export function Header() {
     { label: t.nav.work, href: "/" },
     { label: t.nav.fun, href: "/diversao" },
     { label: t.nav.about, href: "/sobre" },
-    { label: t.nav.resume, href: "/#resumo" },
   ] as const;
 
   return (
@@ -32,11 +31,8 @@ export function Header() {
           className="relative flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-full bg-black"
           aria-label={t.nav.homeAria}
         >
-          <span
-            className="font-[family-name:var(--font-museo)] text-2xl font-medium leading-none text-[#f1f1ee]"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            jp
+          <span className="font-[family-name:var(--font-museo)] text-[22px] font-normal leading-none tracking-[-0.04em] text-[#f1f1ee]">
+            JP
           </span>
         </Link>
 
@@ -62,6 +58,14 @@ export function Header() {
               </Link>
             );
           })}
+
+          <a
+            href="/documents/Jennifer_Paiva_Resume_UX_Designer.pdf"
+            download="Jennifer_Paiva_Resume_UX_Designer.pdf"
+            className="hidden text-lg font-bold text-[#898989] transition-colors hover:text-black sm:inline"
+          >
+            {t.nav.resume}
+          </a>
 
           <div
             className="relative flex h-[30px] w-[79px] overflow-hidden rounded-2xl bg-[#d7d7d6]"
